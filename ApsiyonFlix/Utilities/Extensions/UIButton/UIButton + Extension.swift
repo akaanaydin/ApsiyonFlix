@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: - UIButton Extension for Touch Effect
 extension UIButton {
     func showAnimation(_ completionBlock: @escaping () -> Void) {
         isUserInteractionEnabled = false
@@ -30,7 +31,3 @@ extension UIButton {
     }
 }
 
-extension UIViewController {
-
-
-}

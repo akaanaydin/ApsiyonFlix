@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90BB161284FD69B00E829B2 /* TvShowDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90BB160284FD69B00E829B2 /* TvShowDetailController.swift */; };
+		B90BB164284FD8BE00E829B2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90BB163284FD8BE00E829B2 /* Color.swift */; };
 		B98F361C284EA43400D096D8 /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F361B284EA43400D096D8 /* MovieTableCell.swift */; };
 		B98F361F284EA9C300D096D8 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F361E284EA9C300D096D8 /* UIButton + Extension.swift */; };
 		B98F3621284ED65200D096D8 /* TvShowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F3620284ED65200D096D8 /* TvShowTableCell.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90BB160284FD69B00E829B2 /* TvShowDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowDetailController.swift; sourceTree = "<group>"; };
+		B90BB163284FD8BE00E829B2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B98F361B284EA43400D096D8 /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
 		B98F361E284EA9C300D096D8 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		B98F3620284ED65200D096D8 /* TvShowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowTableCell.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90BB162284FD8B300E829B2 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B90BB163284FD8BE00E829B2 /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		B98F361D284EA9A800D096D8 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				B9AD63C6284D6232003D25D0 /* MovieController */,
-				B9AD63C8284D6266003D25D0 /* MovieDetailController */,
 				B9AD63C7284D6251003D25D0 /* TvShowController */,
+				B9AD63C8284D6266003D25D0 /* DetailControllers */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -144,6 +156,7 @@
 		B9AD63C0284D615B003D25D0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B90BB162284FD8B300E829B2 /* Color */,
 				B9AD63EC284D665C003D25D0 /* Extensions */,
 				B9AD63EB284D6654003D25D0 /* Constants */,
 			);
@@ -212,12 +225,13 @@
 			path = TvShowController;
 			sourceTree = "<group>";
 		};
-		B9AD63C8284D6266003D25D0 /* MovieDetailController */ = {
+		B9AD63C8284D6266003D25D0 /* DetailControllers */ = {
 			isa = PBXGroup;
 			children = (
 				B9AD63D7284D6558003D25D0 /* MovieDetailController.swift */,
+				B90BB160284FD69B00E829B2 /* TvShowDetailController.swift */,
 			);
-			path = MovieDetailController;
+			path = DetailControllers;
 			sourceTree = "<group>";
 		};
 		B9AD63CB284D64AE003D25D0 /* Cell */ = {
@@ -408,6 +422,7 @@
 			files = (
 				B9AD63E4284D6614003D25D0 /* MovieModel.swift in Sources */,
 				B9AD63FB284D673F003D25D0 /* Constant.swift in Sources */,
+				B90BB164284FD8BE00E829B2 /* Color.swift in Sources */,
 				B98F361C284EA43400D096D8 /* MovieTableCell.swift in Sources */,
 				B9AD63DE284D6589003D25D0 /* ServiceManager.swift in Sources */,
 				B9AD63CA284D6290003D25D0 /* MovieController.swift in Sources */,
@@ -419,6 +434,7 @@
 				B9AD63E6284D6622003D25D0 /* MovieDetailModel.swift in Sources */,
 				B9AD63AA284D60B7003D25D0 /* AppDelegate.swift in Sources */,
 				B9AD63EA284D6637003D25D0 /* TvShowDetailModel.swift in Sources */,
+				B90BB161284FD69B00E829B2 /* TvShowDetailController.swift in Sources */,
 				B9AD63AC284D60B7003D25D0 /* SceneDelegate.swift in Sources */,
 				B98F361F284EA9C300D096D8 /* UIButton + Extension.swift in Sources */,
 				B9AD63DC284D657D003D25D0 /* Service.swift in Sources */,

@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
+//MARK: - Navigation Controller Extension
 extension UIViewController {
-    
+    // Configure Navigation Bar
     func configureNavigationBar(largeTitleColor: UIColor, backgoundColor: UIColor, tintColor: UIColor, title: String, preferredLargeTitle: Bool) {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
@@ -26,7 +27,6 @@ extension UIViewController {
             navigationController?.navigationBar.prefersLargeTitles = preferredLargeTitle
             navigationController?.navigationBar.isTranslucent = false
             navigationController?.navigationBar.tintColor = tintColor
-            navigationController?.navigationBar.topItem?.backButtonTitle = "Movies"
             navigationItem.title = title
             
             
@@ -39,6 +39,7 @@ extension UIViewController {
         }
     }
     
+    // Present New View Controller
     func presentDetail(_ viewControllerToPresent: UIViewController) {
         let navController = UINavigationController(rootViewController: viewControllerToPresent)
         navController.modalPresentationStyle = .fullScreen
@@ -49,7 +50,7 @@ extension UIViewController {
         self.view.window!.layer.add(transition, forKey: kCATransition)
         self.navigationController?.present(navController, animated: false, completion: nil)
     }
-
+    // Dismiss View Controller
     func dismissDetail() {
         let transition = CATransition()
         transition.duration = 0.35

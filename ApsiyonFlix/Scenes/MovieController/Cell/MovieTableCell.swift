@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class MovieTableCell: UITableViewCell {
     
@@ -14,17 +15,16 @@ class MovieTableCell: UITableViewCell {
     enum Identifier: String {
         case custom = "cellIdentifier"
     }
-    
+    //MARK: - UI Elements
     private let baseView: UIView = {
         let view = UIView()
-        view.backgroundColor = .cyan
+        view.backgroundColor = Color.appBlack
         view.layer.cornerRadius = 12
         return view
     }()
     
     private let movieImage: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .green
         iv.layer.cornerRadius = 12
         iv.clipsToBounds = true
         return iv
@@ -33,36 +33,34 @@ class MovieTableCell: UITableViewCell {
     private let starIcon: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "star.fill")
-        iv.tintColor = .green
         return iv
     }()
     
     private let cellRightArrow: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.right")
+        iv.tintColor = Color.appWhite
         return iv
     }()
     
     private let movieNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Movie Name"
         label.numberOfLines = 3
         return label
     }()
     
     private let releaseYearLabel: UILabel = {
         let label = UILabel()
-        label.text = "2022"
         return label
     }()
     
     
     private let voteLabel: UILabel = {
         let label = UILabel()
-        label.text = "9.3 / 10"
         return label
     }()
     
+    //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -71,7 +69,7 @@ class MovieTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: - Functions
     private func configure() {
         subviews()
         drawDesign()
@@ -98,9 +96,36 @@ class MovieTableCell: UITableViewCell {
         contentView.addSubview(voteLabel)
 
     }
+    //MARK: - Datas for Cell
+    func saveMovieModel(model: MovieResult) {
+        // Release Year
+        guard let text = model.releaseDate else { return }
+        releaseYearLabel.text = String(text.prefix(4))
+        // Vote
+        guard let vote = model.voteAverage else { return }
+        voteLabel.text = "\(vote) / 10"
+        
+        switch true {
+        case vote < 7.0:
+            voteLabel.textColor = .red
+            starIcon.tintColor = .red
+        case vote >= 7.0 && vote < 9.0:
+            voteLabel.textColor = .orange
+            starIcon.tintColor = .orange
+        case vote >= 9.0:
+            voteLabel.textColor = .green
+            starIcon.tintColor = .green
+        default:
+            break
+        }
+        // Movie Name
+        movieNameLabel.text = model.title
+        // Movie Image
+        movieImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w1280" + (model.posterPath ?? "")))
+    }
     
 }
-
+//MARK: - SnapKit Extensions
 extension MovieTableCell {
     private func makeBaseView() {
         baseView.snp.makeConstraints { make in

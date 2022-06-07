@@ -23,13 +23,13 @@ struct MovieModel: Codable {
 // MARK: - MovieResult
 struct MovieResult: Codable {
     let id: Int?
-    let originalTitle: String?
+    let title: String?
     let posterPath, releaseDate: String?
     let voteAverage: Double?
 
     enum CodingKeys: String, CodingKey {
         case id
-        case originalTitle = "original_title"
+        case title = "title"
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"

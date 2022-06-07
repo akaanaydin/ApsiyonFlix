@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class TvShowTableCell: UITableViewCell {
     
@@ -14,17 +15,16 @@ class TvShowTableCell: UITableViewCell {
     enum Identifier: String {
         case custom = "cellIdentifier"
     }
-    
+    //MARK: - UI Elements
     private let baseView: UIView = {
         let view = UIView()
-        view.backgroundColor = .brown
+        view.backgroundColor = Color.appBlack
         view.layer.cornerRadius = 12
         return view
     }()
     
-    private let movieImage: UIImageView = {
+    private let tvShowImage: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .orange
         iv.layer.cornerRadius = 12
         iv.clipsToBounds = true
         return iv
@@ -33,36 +33,27 @@ class TvShowTableCell: UITableViewCell {
     private let starIcon: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "star.fill")
-        iv.tintColor = .orange
         return iv
     }()
     
     private let cellRightArrow: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(systemName: "arrow.right")
+        iv.tintColor = Color.appWhite
         return iv
     }()
     
-    private let movieNameLabel: UILabel = {
+    private let tvShowNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Tv Show Name"
         label.numberOfLines = 3
         return label
     }()
     
-    private let releaseYearLabel: UILabel = {
-        let label = UILabel()
-        label.text = "2021"
-        return label
-    }()
-    
-    
     private let voteLabel: UILabel = {
         let label = UILabel()
-        label.text = "8.9 / 10"
         return label
     }()
-    
+    //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -71,16 +62,15 @@ class TvShowTableCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: - Functions
     private func configure() {
         subviews()
         drawDesign()
         makeBaseView()
-        makeMovieImage()
+        makeTvShowImage()
         makeStarIcon()
         makeCellRightArrow()
-        makeMovieNameLabel()
-        makeReleaseYearLabel()
+        makeTvShowNameLabel()
         makeVoteLabel()
     }
     
@@ -90,17 +80,40 @@ class TvShowTableCell: UITableViewCell {
     
     private func subviews() {
         contentView.addSubview(baseView)
-        contentView.addSubview(movieImage)
+        contentView.addSubview(tvShowImage)
         contentView.addSubview(starIcon)
         contentView.addSubview(cellRightArrow)
-        contentView.addSubview(movieNameLabel)
-        contentView.addSubview(releaseYearLabel)
+        contentView.addSubview(tvShowNameLabel)
         contentView.addSubview(voteLabel)
 
     }
+    //MARK: - Datas for Cell
+    func saveTvShowModel(model: TvShowResult) {
+        // Vote
+        guard let vote = model.voteAverage else { return }
+        voteLabel.text = "\(vote) / 10"
+        
+        switch true {
+        case vote < 7.0:
+            voteLabel.textColor = .red
+            starIcon.tintColor = .red
+        case vote >= 7.0 && vote < 9.0:
+            voteLabel.textColor = .orange
+            starIcon.tintColor = .orange
+        case vote >= 9.0:
+            voteLabel.textColor = .green
+            starIcon.tintColor = .green
+        default:
+            break
+        }
+        // Tv Show Name
+        tvShowNameLabel.text = model.name
+        // Tv Show Image
+        tvShowImage.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w1280" + (model.posterPath ?? "")))
+    }
     
 }
-
+//MARK: - SnapKit Extension
 extension TvShowTableCell {
     private func makeBaseView() {
         baseView.snp.makeConstraints { make in
@@ -111,8 +124,8 @@ extension TvShowTableCell {
         }
     }
     
-    private func makeMovieImage() {
-        movieImage.snp.makeConstraints { make in
+    private func makeTvShowImage() {
+        tvShowImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(15)
             make.bottom.equalTo(baseView.snp.bottom).inset(15)
             make.left.equalTo(baseView.snp.left).offset(15)
@@ -122,8 +135,8 @@ extension TvShowTableCell {
     
     private func makeStarIcon() {
         starIcon.snp.makeConstraints { make in
-            make.left.equalTo(movieImage.snp.right).offset(10)
-            make.bottom.equalTo(movieImage.snp.bottom)
+            make.left.equalTo(tvShowImage.snp.right).offset(10)
+            make.bottom.equalTo(tvShowImage.snp.bottom)
             make.height.equalTo(20)
         }
     }
@@ -136,19 +149,12 @@ extension TvShowTableCell {
         }
     }
     
-    private func makeMovieNameLabel() {
-        movieNameLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(movieImage)
-            make.left.equalTo(movieImage.snp.right).offset(10)
+    private func makeTvShowNameLabel() {
+        tvShowNameLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(tvShowImage)
+            make.left.equalTo(tvShowImage.snp.right).offset(10)
             make.right.equalTo(cellRightArrow.snp.left).inset(10)
-            make.bottom.equalTo(releaseYearLabel.snp.top)
-        }
-    }
-    
-    private func makeReleaseYearLabel() {
-        releaseYearLabel.snp.makeConstraints { make in
-            make.left.equalTo(movieNameLabel)
-            make.bottom.equalTo(voteLabel.snp.top).offset(-18)
+            make.height.equalTo(100)
         }
     }
     

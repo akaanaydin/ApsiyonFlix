@@ -15,21 +15,22 @@ extension Constant {
             
         case BASE_URL = "https://api.themoviedb.org"
         case API_KEY = "bd7847090fea4f76f5ce0c22bd1a85b8"
+        case IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w1280"
             
             static func fetchMovies() -> String {
-                "\(BASE_URL.rawValue)/3/movie/popular?api_key=\(API_KEY)"
+                "\(BASE_URL.rawValue)/3/movie/popular?api_key=\(API_KEY.rawValue)"
             }
             
             static func fetchMovieDetail(movieID: Int) -> String {
-                "\(BASE_URL.rawValue)/3/movie/\(movieID)?api_key=\(API_KEY)"
+                "\(BASE_URL.rawValue)/3/movie/\(movieID)?api_key=\(API_KEY.rawValue)"
             }
             
             static func fetchTvShows() -> String {
-                "\(BASE_URL.rawValue)/3/tv/popular?api_key=\(API_KEY)"
+                "\(BASE_URL.rawValue)/3/tv/popular?api_key=\(API_KEY.rawValue)"
             }
             
             static func fetchTvShowDetail(tvShowID: Int) -> String {
-                "\(BASE_URL.rawValue)/3/tv/\(tvShowID)?api_key=\(API_KEY)"
+                "\(BASE_URL.rawValue)/3/tv/\(tvShowID)?api_key=\(API_KEY.rawValue)"
             }
             
         }
