@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B98F361C284EA43400D096D8 /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F361B284EA43400D096D8 /* MovieTableCell.swift */; };
+		B98F361F284EA9C300D096D8 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F361E284EA9C300D096D8 /* UIButton + Extension.swift */; };
+		B98F3621284ED65200D096D8 /* TvShowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F3620284ED65200D096D8 /* TvShowTableCell.swift */; };
 		B9AD63AA284D60B7003D25D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63A9284D60B7003D25D0 /* AppDelegate.swift */; };
 		B9AD63AC284D60B7003D25D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63AB284D60B7003D25D0 /* SceneDelegate.swift */; };
 		B9AD63B3284D60B8003D25D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9AD63B2284D60B8003D25D0 /* Assets.xcassets */; };
 		B9AD63B6284D60B8003D25D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AD63B4284D60B8003D25D0 /* LaunchScreen.storyboard */; };
 		B9AD63CA284D6290003D25D0 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63C9284D6290003D25D0 /* MovieController.swift */; };
 		B9AD63CD284D64DD003D25D0 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63CC284D64DD003D25D0 /* MovieViewModel.swift */; };
-		B9AD63CF284D64FB003D25D0 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63CE284D64FB003D25D0 /* MovieCollectionCell.swift */; };
-		B9AD63D2284D651D003D25D0 /* TvShowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63D1284D651D003D25D0 /* TvShowCollectionCell.swift */; };
 		B9AD63D4284D6533003D25D0 /* TvShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63D3284D6533003D25D0 /* TvShowController.swift */; };
 		B9AD63D6284D6541003D25D0 /* TvShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63D5284D6541003D25D0 /* TvShowViewModel.swift */; };
 		B9AD63D8284D6558003D25D0 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD63D7284D6558003D25D0 /* MovieDetailController.swift */; };
@@ -33,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B98F361B284EA43400D096D8 /* MovieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
+		B98F361E284EA9C300D096D8 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		B98F3620284ED65200D096D8 /* TvShowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowTableCell.swift; sourceTree = "<group>"; };
 		B9AD63A6284D60B7003D25D0 /* ApsiyonFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApsiyonFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AD63A9284D60B7003D25D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9AD63AB284D60B7003D25D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,8 +45,6 @@
 		B9AD63B7284D60B8003D25D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9AD63C9284D6290003D25D0 /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		B9AD63CC284D64DD003D25D0 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
-		B9AD63CE284D64FB003D25D0 /* MovieCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionCell.swift; sourceTree = "<group>"; };
-		B9AD63D1284D651D003D25D0 /* TvShowCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowCollectionCell.swift; sourceTree = "<group>"; };
 		B9AD63D3284D6533003D25D0 /* TvShowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowController.swift; sourceTree = "<group>"; };
 		B9AD63D5284D6541003D25D0 /* TvShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowViewModel.swift; sourceTree = "<group>"; };
 		B9AD63D7284D6558003D25D0 /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B98F361D284EA9A800D096D8 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				B98F361E284EA9C300D096D8 /* UIButton + Extension.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		B9AD639D284D60B7003D25D0 = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +223,7 @@
 		B9AD63CB284D64AE003D25D0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B9AD63CE284D64FB003D25D0 /* MovieCollectionCell.swift */,
+				B98F361B284EA43400D096D8 /* MovieTableCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -221,7 +231,7 @@
 		B9AD63D0284D6503003D25D0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B9AD63D1284D651D003D25D0 /* TvShowCollectionCell.swift */,
+				B98F3620284ED65200D096D8 /* TvShowTableCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -286,6 +296,7 @@
 		B9AD63EC284D665C003D25D0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B98F361D284EA9A800D096D8 /* UIButton */,
 				B9AD63ED284D6664003D25D0 /* ViewController */,
 			);
 			path = Extensions;
@@ -397,18 +408,19 @@
 			files = (
 				B9AD63E4284D6614003D25D0 /* MovieModel.swift in Sources */,
 				B9AD63FB284D673F003D25D0 /* Constant.swift in Sources */,
+				B98F361C284EA43400D096D8 /* MovieTableCell.swift in Sources */,
 				B9AD63DE284D6589003D25D0 /* ServiceManager.swift in Sources */,
 				B9AD63CA284D6290003D25D0 /* MovieController.swift in Sources */,
-				B9AD63CF284D64FB003D25D0 /* MovieCollectionCell.swift in Sources */,
 				B9AD63D4284D6533003D25D0 /* TvShowController.swift in Sources */,
 				B9AD63D8284D6558003D25D0 /* MovieDetailController.swift in Sources */,
 				B9AD63E8284D662C003D25D0 /* TvShowModel.swift in Sources */,
+				B98F3621284ED65200D096D8 /* TvShowTableCell.swift in Sources */,
 				B9AD63F0284D6698003D25D0 /* NavigationBar + Extension.swift in Sources */,
-				B9AD63D2284D651D003D25D0 /* TvShowCollectionCell.swift in Sources */,
 				B9AD63E6284D6622003D25D0 /* MovieDetailModel.swift in Sources */,
 				B9AD63AA284D60B7003D25D0 /* AppDelegate.swift in Sources */,
 				B9AD63EA284D6637003D25D0 /* TvShowDetailModel.swift in Sources */,
 				B9AD63AC284D60B7003D25D0 /* SceneDelegate.swift in Sources */,
+				B98F361F284EA9C300D096D8 /* UIButton + Extension.swift in Sources */,
 				B9AD63DC284D657D003D25D0 /* Service.swift in Sources */,
 				B9AD63CD284D64DD003D25D0 /* MovieViewModel.swift in Sources */,
 				B9AD63FE284D6761003D25D0 /* NetworkConstant.swift in Sources */,

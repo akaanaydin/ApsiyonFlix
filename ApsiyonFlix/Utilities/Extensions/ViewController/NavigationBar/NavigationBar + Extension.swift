@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension MovieController {
+extension UIViewController {
     
     func configureNavigationBar(largeTitleColor: UIColor, backgoundColor: UIColor, tintColor: UIColor, title: String, preferredLargeTitle: Bool) {
         if #available(iOS 13.0, *) {
@@ -37,5 +37,26 @@ extension MovieController {
             navigationController?.navigationBar.isTranslucent = false
             navigationItem.title = title
         }
+    }
+    
+    func presentDetail(_ viewControllerToPresent: UIViewController) {
+        let navController = UINavigationController(rootViewController: viewControllerToPresent)
+        navController.modalPresentationStyle = .fullScreen
+        let transition = CATransition()
+        transition.duration = 0.35
+        transition.type = CATransitionType.fade
+        transition.subtype = CATransitionSubtype.fromRight
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.present(navController, animated: false, completion: nil)
+    }
+
+    func dismissDetail() {
+        let transition = CATransition()
+        transition.duration = 0.35
+        transition.type = CATransitionType.fade
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+
+        dismiss(animated: false)
     }
 }
